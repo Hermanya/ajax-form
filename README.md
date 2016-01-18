@@ -3,17 +3,7 @@ Ajax form
 How to use:
 - import `<script src="ajax-form.js"></script>` or using your bundler of choice
 - add `ajax` attribute on a form, like `<form ajax id="my-form" action="/path" method="post">`
-- listen for events:
-    
-```javascript
-var form = document.querySelector('#my-form');
-form.addEventListener('success', function (event) {
-    console.log(event.detail); // has xhr and parsedResponseBody properties
-});
-form.addEventListener('error', function (event) {
-    console.log(event.detail); // has xhr property
-});
-```
+- listen for `success` and `error` events on the form
 
 Other features:
 - you may add `contentType="urlencoded"` form attribute, `json` by default
