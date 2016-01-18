@@ -5,7 +5,7 @@ How to use:
 - add `ajax` attribute on a form, like `<form ajax id="my-form" action="/path" method="post">`
 - listen for events:
     
-```
+```javascript
 var form = document.querySelector('#my-form');
 form.addEventListener('success', function (event) {
     console.log(event.detail); // has xhr and parsedResponseBody properties
