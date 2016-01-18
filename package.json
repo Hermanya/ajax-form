@@ -1,0 +1,5 @@
+{
+    "scripts": {
+        "test": "open http://localhost:8000/demo; python -m SimpleHTTPServer"
+    }
+}

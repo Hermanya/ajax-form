@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Ajax form demo</title>
+        <style media="screen">
+            * {
+                font-family: monospace;
+            }
+        </style>
+    </head>
+    <body>
+        <pre>
+All these forms have `ajax` attribute
+- Run `npm t` (if not already),
+- open dev tools on network tab and
+- submit some forms.
+        </pre>
+        <form action="response.json" method="get" ajax>
+            <legend>Get some json (it's actually 200)</legend>
+            <input type="text" name="name" value="search">
+            <button type="submit">Submit</button>
+        </form>
+        <form action="response.json" method="post" ajax contentType="urlencoded">
+            <legend>Post urlencoded</legend>
+            <input type="text" name="name" value="herman">
+            <button type="submit">Submit</button>
+        </form>
+        <form action="response.json" method="post" ajax contentType="json">
+            <legend>Post json</legend>
+            <input type="text" name="name" value="Your name">
+            <button type="submit">Submit</button>
+        </form>
+        <form action="response.json" method="put" ajax>
+            <legend>Put it</legend>
+            <input type="text" name="name" value="New thing">
+            <button type="submit">Submit</button>
+        </form>
+        <form action="response.json" method="delete" ajax>
+            <legend>And then delete</legend>
+            <input type="text" name="name" value="Confirm name">
+            <button type="submit">Submit</button>
+        </form>
+        <script>
+            Array.from(document.querySelectorAll('form[ajax]')).map(addListener);
+
+            function addListener (form) {
+                form.addEventListener('success', handleError);
+                form.addEventListener('error', handleError);
+            }
+
+            function handleError (event) {
+                console.log(event.detail);
+            }
+        </script>
+        <script src="/ajax-form.js"></script>
+    </body>
+</html>
