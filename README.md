@@ -24,7 +24,7 @@ Example:
     location.hash = 'profile';
   })
   loginForm.addEventListener('error', function () {
-    alert('We don't recognize you, double check your credentials.');
+    alert('We do not recognize you, double check your credentials.');
   })
 </script>
 ```
